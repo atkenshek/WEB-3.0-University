@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -132,7 +132,7 @@ if(isset($_POST['update_now'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>watch video</title>
+   <title><?= __("watch video")?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -152,12 +152,12 @@ if(isset($_POST['update_now'])){
          $fetch_edit_comment = $verify_comment->fetch(PDO::FETCH_ASSOC);
 ?>
 <section class="edit-comment">
-   <h1 class="heading">edti comment</h1>
+   <h1 class="heading"><?= __("edit comment")?></h1>
    <form action="" method="post">
       <input type="hidden" name="update_id" value="<?= $fetch_edit_comment['id']; ?>">
       <textarea name="update_box" class="box" maxlength="1000" required placeholder="please enter your comment" cols="30" rows="10"><?= $fetch_edit_comment['comment']; ?></textarea>
       <div class="flex">
-         <a href="watch_video.php?get_id=<?= $get_id; ?>" class="inline-option-btn">cancel edit</a>
+         <a href="watch_video.php?get_id=<?= $get_id; ?>" class="inline-option-btn"><?= __("cancel edit")?></a>
          <input type="submit" value="update now" name="update_now" class="inline-btn">
       </div>
    </form>
@@ -205,15 +205,15 @@ if(isset($_POST['update_now'])){
       </div>
       <form action="" method="post" class="flex">
          <input type="hidden" name="content_id" value="<?= $content_id; ?>">
-         <a href="playlist.php?get_id=<?= $fetch_content['playlist_id']; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $fetch_content['playlist_id']; ?>" class="inline-btn"><?= __("view playlist")?></a>
          <?php
             if($verify_likes->rowCount() > 0){
          ?>
-         <button type="submit" name="like_content"><i class="fas fa-heart"></i><span>liked</span></button>
+         <button type="submit" name="like_content"><i class="fas fa-heart"></i><span><?= __("liked")?></span></button>
          <?php
          }else{
          ?>
-         <button type="submit" name="like_content"><i class="far fa-heart"></i><span>like</span></button>
+         <button type="submit" name="like_content"><i class="far fa-heart"></i><span><?= __("like")?></span></button>
          <?php
             }
          ?>
@@ -231,7 +231,7 @@ if(isset($_POST['update_now'])){
 
 <section class="comments">
 
-   <h1 class="heading">add a comment</h1>
+   <h1 class="heading"><?= __("add a comment")?></h1>
 
    <form action="" method="post" class="add-comment">
       <input type="hidden" name="content_id" value="<?= $get_id; ?>">
@@ -239,7 +239,7 @@ if(isset($_POST['update_now'])){
       <input type="submit" value="add comment" name="add_comment" class="inline-btn">
    </form>
 
-   <h1 class="heading">user comments</h1>
+   <h1 class="heading"><?= __("user comments")?></h1>
 
    
    <div class="show-comments">
@@ -266,8 +266,8 @@ if(isset($_POST['update_now'])){
          ?>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="comment_id" value="<?= $fetch_comment['id']; ?>">
-            <button type="submit" name="edit_comment" class="inline-option-btn">edit comment</button>
-            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');">delete comment</button>
+            <button type="submit" name="edit_comment" class="inline-option-btn"><?= __("edit comment")?></button>
+            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');"><?= __("delete comment")?></button>
          </form>
          <?php
          }

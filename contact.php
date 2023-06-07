@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -75,22 +75,22 @@ if(isset($_POST['submit'])){
 
       <div class="box">
          <i class="fas fa-phone"></i>
-         <h3>phone number</h3>
-         <a href="tel:1234567890">123-456-7890</a>
-         <a href="tel:1112223333">111-222-3333</a>
+         <h3><?= __('phone number')?></h3>
+         <a href="tel:87477775454">87477775454</a>
+         <a href="tel:87477775454">87477775454</a>
       </div>
 
       <div class="box">
          <i class="fas fa-envelope"></i>
-         <h3>email address</h3>
-         <a href="mailto:shaikhanas@gmail.com">shaikhanas@gmail.come</a>
-         <a href="mailto:anasbhai@gmail.com">anasbhai@gmail.come</a>
+         <h3><?= __('email address')?></h3>
+         <a href="mailto:meiramsopytemirzhanov@gmail.com">meiramsopytemirzhanov@gmail.com</a>
+         <a href="mailto:random9804@yandex.ru">random9804@yandex.ru</a>
       </div>
 
       <div class="box">
          <i class="fas fa-map-marker-alt"></i>
-         <h3>office address</h3>
-         <a href="#">flat no. 1, a-1 building, jogeshwari, mumbai, india - 400104</a>
+         <h3><?= __('office address')?></h3>
+         <a href="#">apart. 32, Astana, Almaty Raion, Kazakhstan</a>
       </div>
 
 

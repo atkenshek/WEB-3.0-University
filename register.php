@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   <title><?= __("home")?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -75,25 +75,25 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
-      <h3>create account</h3>
+      <h3><?= __("create account")?></h3>
       <div class="flex">
          <div class="col">
-            <p>your name <span>*</span></p>
-            <input type="text" name="name" placeholder="Enter your name" maxlength="50" required class="box">
-            <p>your email <span>*</span></p>
-            <input type="email" name="email" placeholder="Enter your email" maxlength="20" required class="box">
+            <p><?= __("your name")?> <span>*</span></p>
+            <input type="text" name="name" placeholder="<?= __("Enter your name")?>" maxlength="50" required class="box">
+            <p><?= __("your email")?> <span>*</span></p>
+            <input type="email" name="email" placeholder="<?= __("Enter your email")?>" maxlength="20" required class="box">
          </div>
          <div class="col">
-            <p>your password <span>*</span></p>
-            <input type="password" name="pass" placeholder="Enter your password" maxlength="20" required class="box">
-            <p>confirm password <span>*</span></p>
-            <input type="password" name="cpass" placeholder="Confirm your password" maxlength="20" required class="box">
+            <p><?= __("your password")?> <span>*</span></p>
+            <input type="password" name="pass" placeholder="<?= __("Enter your password")?>" maxlength="20" required class="box">
+            <p><?= __("confirm password")?> <span>*</span></p>
+            <input type="password" name="cpass" placeholder="<?= __("Confirm your password")?>" maxlength="20" required class="box">
          </div>
       </div>
-      <p>select pic <span>*</span></p>
+      <p><?= __("select pic")?> <span>*</span></p>
       <input type="file" name="image" accept="image/*" required class="box">
-      <p class="link">already have an account? <a href="login.php">login now</a></p>
-      <input type="submit" name="submit" value="register now" class="btn">
+      <p class="link"><?= __("already have an account?")?> <a href="login.php"><?= __("login now")?></a></p>
+      <input type="submit" name="submit" value="<?= __("register now")?>" class="btn">
    </form>
 
 </section>

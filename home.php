@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -28,7 +28,7 @@ $total_bookmarked = $select_bookmark->rowCount();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   <title><?= __('student')?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -40,7 +40,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="quick-select">
 
-   <h1 class="heading">quick options</h1>
+   <h1 class="heading"><?= __('Home')?></h1>
 
    <div class="box-container">
 
@@ -48,22 +48,22 @@ $total_bookmarked = $select_bookmark->rowCount();
          if($user_id != ''){
       ?>
       <div class="box">
-         <h3 class="title">likes and comments</h3>
-         <p>total likes : <span><?= $total_likes; ?></span></p>
-         <a href="likes.php" class="inline-btn">view likes</a>
-         <p>total comments : <span><?= $total_comments; ?></span></p>
-         <a href="comments.php" class="inline-btn">view comments</a>
-         <p>saved playlist : <span><?= $total_bookmarked; ?></span></p>
-         <a href="bookmark.php" class="inline-btn">view bookmark</a>
+         <h3 class="title"><?= __('likes and comments')?></h3>
+         <p><?= __('total likes')?> : <span><?= $total_likes; ?></span></p>
+         <a href="likes.php" class="inline-btn"><?= __('view likes')?></a>
+         <p><?= __('total comments')?> : <span><?= $total_comments; ?></span></p>
+         <a href="comments.php" class="inline-btn"><?= __('view comments')?></a>
+         <p><?= __('saved playlist')?> : <span><?= $total_bookmarked; ?></span></p>
+         <a href="bookmark.php" class="inline-btn"><?= __('view bookmark')?></a>
       </div>
       <?php
          }else{ 
       ?>
       <div class="box" style="text-align: center;">
-         <h3 class="title">please login or register</h3>
+         <h3 class="title"><?= __('please login or register')?></h3>
           <div class="flex-btn" style="padding-top: .5rem;">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.php" class="option-btn"><?= __('login')?></a>
+            <a href="register.php" class="option-btn"><?= __('register')?></a>
          </div>
       </div>
       <?php
@@ -71,9 +71,9 @@ $total_bookmarked = $select_bookmark->rowCount();
       ?>
 
       <div class="box">
-         <h3 class="title">top categories</h3>
+         <h3 class="title"><?= __('top categories')?></h3>
          <div class="flex">
-            <a href="search_course.php?Web 3.0 Education"><i class="fas fa-code"></i><span>Web 3.0 Education</span></a>
+            <a href="search_course.php?Web 3.0 Education"><i class="fas fa-code"></i><span><?= __('Web 3.0 Education')?></span></a>
             <a href="#"><i class="fa-brands fa-ethereum"></i><span>ethereum</span></a>
             <a href="#"><i class="fa-brands fa-medapps"></i></i><span>solidity</span></a>
             <a href="#"><i class="fa-solid fa-file-contract"></i><span>smart contracts</span></a>
@@ -84,7 +84,7 @@ $total_bookmarked = $select_bookmark->rowCount();
       </div>
 
       <div class="box">
-         <h3 class="title">popular topics</h3>
+         <h3 class="title"><?= __('popular topics')?></h3>
          <div class="flex">
             <a href="#"><i class="fa-brands fa-rust"></i><span>Rust</span></a>
             <a href="#"><i class="fa-brands fa-hive"></i><span>Solidity</span></a>
@@ -95,9 +95,9 @@ $total_bookmarked = $select_bookmark->rowCount();
       </div>
 
       <div class="box tutor">
-         <h3 class="title">become a tutor</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, laudantium.</p>
-         <a href="admin/register.php" class="inline-btn">get started</a>
+         <h3 class="title"><?= __('become a tutor')?></h3>
+         <p><?= __('Join us as a tutor and share your knowledge in the field of blockchain technologies')?></p>
+         <a href="admin/register.php" class="inline-btn"><?= __('get started')?></a>
       </div>
 
    </div>
@@ -107,7 +107,7 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="courses">
 
-   <h1 class="heading">latest courses</h1>
+   <h1 class="heading"><?= __('latest courses')?></h1>
 
    <div class="box-container">
 
@@ -132,7 +132,7 @@ $total_bookmarked = $select_bookmark->rowCount();
          </div>
          <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn"><?= __('view playlist')?></a>
       </div>
       <?php
          }
@@ -144,7 +144,7 @@ $total_bookmarked = $select_bookmark->rowCount();
    </div>
 
    <div class="more-btn">
-      <a href="courses.php" class="inline-option-btn">view more</a>
+      <a href="courses.php" class="inline-option-btn"><?= __('view more')?></a>
    </div>
 
 </section>

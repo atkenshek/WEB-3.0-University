@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -61,7 +61,7 @@ if(isset($_POST['save_list'])){
 
 <section class="playlist">
 
-   <h1 class="heading">playlist details</h1>
+   <h1 class="heading"><?= __("playlist details")?></h1>
 
    <div class="row">
 
@@ -92,17 +92,17 @@ if(isset($_POST['save_list'])){
             <?php
                if($select_bookmark->rowCount() > 0){
             ?>
-            <button type="submit" name="save_list"><i class="fas fa-bookmark"></i><span>saved</span></button>
+            <button type="submit" name="save_list"><i class="fas fa-bookmark"></i><span><?= __("saved")?></span></button>
             <?php
                }else{
             ?>
-               <button type="submit" name="save_list"><i class="far fa-bookmark"></i><span>save playlist</span></button>
+               <button type="submit" name="save_list"><i class="far fa-bookmark"></i><span><?= __("save playlist")?></span></button>
             <?php
                }
             ?>
          </form>
          <div class="thumb">
-            <span><?= $total_videos; ?> videos</span>
+            <span><?= $total_videos; ?><?= __("videos")?></span>
             <img src="uploaded_files/<?= $fetch_playlist['thumb']; ?>" alt="">
          </div>
       </div>
@@ -124,7 +124,7 @@ if(isset($_POST['save_list'])){
 
       <?php
          }else{
-            echo '<p class="empty">this playlist was not found!</p>';
+            echo '<p class="empty"><?= __("this playlist was not found!")?></p>';
          }  
       ?>
 
@@ -134,7 +134,7 @@ if(isset($_POST['save_list'])){
 
 <section class="videos-container">
 
-   <h1 class="heading">playlist videos</h1>
+   <h1 class="heading"><?= __("playlist videos")?></h1>
 
    <div class="box-container">
 
@@ -152,7 +152,7 @@ if(isset($_POST['save_list'])){
       <?php
             }
          }else{
-            echo '<p class="empty">no videos added yet!</p>';
+            echo "<p class='empty'>no videos added yet!</p>";
          }
       ?>
 

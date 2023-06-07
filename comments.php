@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -78,12 +78,12 @@ if(isset($_POST['update_now'])){
          $fetch_edit_comment = $verify_comment->fetch(PDO::FETCH_ASSOC);
 ?>
 <section class="edit-comment">
-   <h1 class="heading">edti comment</h1>
+   <h1 class="heading"><?= __('edit comment')?></h1>
    <form action="" method="post">
       <input type="hidden" name="update_id" value="<?= $fetch_edit_comment['id']; ?>">
-      <textarea name="update_box" class="box" maxlength="1000" required placeholder="please enter your comment" cols="30" rows="10"><?= $fetch_edit_comment['comment']; ?></textarea>
+      <textarea name="update_box" class="box" maxlength="1000" required placeholder="<?= __('please enter your comment')?>" cols="30" rows="10"><?= $fetch_edit_comment['comment']; ?></textarea>
       <div class="flex">
-         <a href="comments.php" class="inline-option-btn">cancel edit</a>
+         <a href="comments.php" class="inline-option-btn"><?= __('cancel edit')?></a>
          <input type="submit" value="update now" name="update_now" class="inline-btn">
       </div>
    </form>
@@ -97,7 +97,7 @@ if(isset($_POST['update_now'])){
 
 <section class="comments">
 
-   <h1 class="heading">your comments</h1>
+   <h1 class="heading"><?= __('your comments')?></h1>
 
    
    <div class="show-comments">
@@ -111,15 +111,15 @@ if(isset($_POST['update_now'])){
                $fetch_content = $select_content->fetch(PDO::FETCH_ASSOC);
       ?>
       <div class="box" style="<?php if($fetch_comment['user_id'] == $user_id){echo 'order:-1;';} ?>">
-         <div class="content"><span><?= $fetch_comment['date']; ?></span><p> - <?= $fetch_content['title']; ?> - </p><a href="watch_video.php?get_id=<?= $fetch_content['id']; ?>">view content</a></div>
+         <div class="content"><span><?= $fetch_comment['date']; ?></span><p> - <?= $fetch_content['title']; ?> - </p><a href="watch_video.php?get_id=<?= $fetch_content['id']; ?>"><?= __('view content')?></a></div>
          <p class="text"><?= $fetch_comment['comment']; ?></p>
          <?php
             if($fetch_comment['user_id'] == $user_id){ 
          ?>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="comment_id" value="<?= $fetch_comment['id']; ?>">
-            <button type="submit" name="edit_comment" class="inline-option-btn">edit comment</button>
-            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');">delete comment</button>
+            <button type="submit" name="edit_comment" class="inline-option-btn"><?= __('edit comment')?></button>
+            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');"><?= __('delete comment')?></button>
          </form>
          <?php
          }

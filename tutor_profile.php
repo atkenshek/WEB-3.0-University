@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -47,7 +47,7 @@ if(isset($_POST['tutor_fetch'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>tutor's profile</title>
+   <title><?= __("tutor's profile")?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -59,7 +59,7 @@ if(isset($_POST['tutor_fetch'])){
 
 <section class="tutor-profile">
 
-   <h1 class="heading">profile details</h1>
+   <h1 class="heading"><?= __("profile details")?></h1>
 
    <div class="details">
       <div class="tutor">
@@ -68,10 +68,10 @@ if(isset($_POST['tutor_fetch'])){
          <span><?= $fetch_tutor['profession']; ?></span>
       </div>
       <div class="flex">
-         <p>total playlists : <span><?= $total_playlists; ?></span></p>
-         <p>total videos : <span><?= $total_contents; ?></span></p>
-         <p>total likes : <span><?= $total_likes; ?></span></p>
-         <p>total comments : <span><?= $total_comments; ?></span></p>
+         <p><?= __("total playlists")?> : <span><?= $total_playlists; ?></span></p>
+         <p><?= __("total videos")?> : <span><?= $total_contents; ?></span></p>
+         <p><?= __("total likes")?> : <span><?= $total_likes; ?></span></p>
+         <p><?= __("total comments")?> : <span><?= $total_comments; ?></span></p>
       </div>
    </div>
 
@@ -79,7 +79,7 @@ if(isset($_POST['tutor_fetch'])){
 
 <section class="courses">
 
-   <h1 class="heading">latest courese</h1>
+   <h1 class="heading"><?= __("latest courese")?></h1>
 
    <div class="box-container">
 
@@ -104,7 +104,7 @@ if(isset($_POST['tutor_fetch'])){
          </div>
          <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn"><?= __("view playlist")?></a>
       </div>
       <?php
          }

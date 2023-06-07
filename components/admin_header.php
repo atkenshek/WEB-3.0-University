@@ -26,6 +26,7 @@ if(isset($message)){
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="search-btn" class="fas fa-search"></div>
          <div id="user-btn" class="fas fa-user"></div>
+         <div id="dropdown-btn" class="fas fa-language"></div>
          <div id="toggle-btn" class="fas fa-sun"></div>
       </div>
 
@@ -39,19 +40,19 @@ if(isset($message)){
          <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
          <span><?= $fetch_profile['profession']; ?></span>
-         <a href="profile.php" class="btn">view profile</a>
+         <a href="profile.php" class="btn"><?= __('view profile')?></a>
          <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.php" class="option-btn"><?= __('login')?></a>
+            <a href="register.php" class="option-btn"><?= __('register')?></a>
          </div>
-         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn"><?= __('logout')?></a>
          <?php
             }else{
          ?>
-         <h3>please login or register</h3>
+         <h3><?= __('please login or register')?></h3>
           <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.php" class="option-btn"><?= __('login')?></a>
+            <a href="register.php" class="option-btn"><?= __('register')?></a>
          </div>
          <?php
             }
@@ -77,14 +78,14 @@ if(isset($message)){
          <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
          <span><?= $fetch_profile['profession']; ?></span>
-         <a href="profile.php" class="btn">view profile</a>
+         <a href="profile.php" class="btn"><?= __('view profile')?></a>
          <?php
             }else{
          ?>
-         <h3>please login or register</h3>
+         <h3><?= __('please login or register')?></h3>
           <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.php" class="option-btn"><?= __('login')?></a>
+            <a href="register.php" class="option-btn"><?= __('register')?></a>
          </div>
          <?php
             }
@@ -92,11 +93,11 @@ if(isset($message)){
       </div>
 
    <nav class="navbar">
-      <a href="dashboard.php"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>playlists</span></a>
-      <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>contents</span></a>
-      <a href="comments.php"><i class="fas fa-comment"></i><span>comments</span></a>
-      <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>logout</span></a>
+      <a href="dashboard.php"><i class="fas fa-home"></i><span><?= __('home')?></span></a>
+      <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span><?= __('playlists')?></span></a>
+      <a href="contents.php"><i class="fas fa-graduation-cap"></i><span><?= __('contents')?></span></a>
+      <a href="comments.php"><i class="fas fa-comment"></i><span><?= __('comments')?></span></a>
+      <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span><?= __('logout')?></span></a>
    </nav>
 
 </div>

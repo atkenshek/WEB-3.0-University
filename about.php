@@ -1,5 +1,5 @@
 <?php
-
+require 'lang.php';
 include 'components/connect.php';
 
 if(isset($_COOKIE['user_id'])){
@@ -16,7 +16,7 @@ if(isset($_COOKIE['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>about</title>
+   <title><?= __('about')?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -35,9 +35,9 @@ if(isset($_COOKIE['user_id'])){
       </div>
 
       <div class="content">
-         <h3>why choose us?</h3>
+         <h3><?= __('why choose us?')?></h3>
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nobis distinctio, nisi consequatur ad sequi, rem odit fugiat assumenda eligendi iure aut sunt ratione, tempore porro expedita quisquam.</p>
-         <a href="courses.html" class="inline-btn">our courses</a>
+         <a href="courses.html" class="inline-btn"><?= __('our courses')?></a>
       </div>
 
    </div>
@@ -48,7 +48,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-graduation-cap"></i>
          <div>
             <h3>+1k</h3>
-            <span>online courses</span>
+            <span><?= __('online courses')?></span>
          </div>
       </div>
 
@@ -56,7 +56,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-user-graduate"></i>
          <div>
             <h3>+25k</h3>
-            <span>brilliants students</span>
+            <span><?= __('brilliants students')?></span>
          </div>
       </div>
 
@@ -64,7 +64,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-chalkboard-user"></i>
          <div>
             <h3>+5k</h3>
-            <span>expert teachers</span>
+            <span><?= __('expert teachers')?></span>
          </div>
       </div>
 
@@ -72,7 +72,7 @@ if(isset($_COOKIE['user_id'])){
          <i class="fas fa-briefcase"></i>
          <div>
             <h3>100%</h3>
-            <span>job placement</span>
+            <span><?= __('job placement')?></span>
          </div>
       </div>
 
@@ -83,7 +83,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="reviews">
 
-   <h1 class="heading">student's reviews</h1>
+   <h1 class="heading"><?= __('students reviews')?></h1>
 
    <div class="box-container">
 
