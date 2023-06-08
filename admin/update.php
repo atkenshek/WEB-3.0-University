@@ -1,5 +1,5 @@
 <?php
-
+   require '../lang.php';
    include '../components/connect.php';
 
    if(isset($_COOKIE['tutor_id'])){
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Update Profile</title>
+   <title><?= __('Update Profile')?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="../css/admin_style.css">
@@ -118,41 +118,35 @@ if(isset($_POST['submit'])){
 <section class="form-container" style="min-height: calc(100vh - 19rem);">
 
    <form class="register" action="" method="post" enctype="multipart/form-data">
-      <h3>update profile</h3>
+      <h3><?= __('update profile')?></h3>
       <div class="flex">
          <div class="col">
-            <p>your name </p>
+            <p><?= __('your name')?> </p>
             <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" maxlength="50"  class="box">
-            <p>your profession </p>
+            <p><?= __('your profession')?> </p>
             <select name="profession" class="box">
                <option value="" selected><?= $fetch_profile['profession']; ?></option>
                <option value="developer">developer</option>
-               <option value="desginer">desginer</option>
-               <option value="musician">musician</option>
-               <option value="biologist">biologist</option>
+               <option value="designer">designer</option>
+               <option value="software engineer">software engineer</option>
+               <option value="cyber security">cyber security</option>
                <option value="teacher">teacher</option>
-               <option value="engineer">engineer</option>
-               <option value="lawyer">lawyer</option>
-               <option value="accountant">accountant</option>
-               <option value="doctor">doctor</option>
-               <option value="journalist">journalist</option>
-               <option value="photographer">photographer</option>
             </select>
-            <p>your email </p>
+            <p><?= __('your email')?></p>
             <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" maxlength="20"  class="box">
          </div>
          <div class="col">
-            <p>old password :</p>
-            <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20"  class="box">
-            <p>new password :</p>
-            <input type="password" name="new_pass" placeholder="enter your new password" maxlength="20"  class="box">
-            <p>confirm password :</p>
-            <input type="password" name="cpass" placeholder="confirm your new password" maxlength="20"  class="box">
+            <p><?= __('old password')?> :</p>
+            <input type="password" name="old_pass" placeholder="<?= __('enter your old password')?>" maxlength="20"  class="box">
+            <p><?= __('new password')?> :</p>
+            <input type="password" name="new_pass" placeholder="<?= __('enter your new password')?>" maxlength="20"  class="box">
+            <p><?= __('confirm password')?> :</p>
+            <input type="password" name="cpass" placeholder="<?= __('confirm your new password')?>" maxlength="20"  class="box">
          </div>
       </div>
-      <p>update pic :</p>
+      <p><?= __('update pic')?> :</p>
       <input type="file" name="image" accept="image/*"  class="box">
-      <input type="submit" name="submit" value="update now" class="btn">
+      <input type="submit" name="submit" value="<?= __('update now')?>" class="btn">
    </form>
 
 </section>

@@ -1,5 +1,5 @@
 <?php
-
+require '../lang.php';
 include '../components/connect.php';
 
 if(isset($_COOKIE['tutor_id'])){
@@ -42,7 +42,7 @@ if(isset($_POST['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Playlists</title>
+   <title><?= __('Playlists')?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="../css/admin_style.css">
@@ -54,13 +54,13 @@ if(isset($_POST['delete'])){
 
 <section class="playlists">
 
-   <h1 class="heading">added playlists</h1>
+   <h1 class="heading"><?= __('added playlists')?></h1>
 
    <div class="box-container">
    
       <div class="box" style="text-align: center;">
-         <h3 class="title" style="margin-bottom: .5rem;">create new playlist</h3>
-         <a href="add_playlist.php" class="btn">add playlist</a>
+         <h3 class="title" style="margin-bottom: .5rem;"><?= __('create new playlist')?></h3>
+         <a href="add_playlist.php" class="btn"><?= __('add playlist')?></a>
       </div>
 
       <?php
@@ -86,10 +86,10 @@ if(isset($_POST['delete'])){
          <p class="description"><?= $fetch_playlist['description']; ?></p>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
-            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn">update</a>
+            <a href="update_playlist.php?get_id=<?= $playlist_id; ?>" class="option-btn"><?= __('update')?></a>
             <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this playlist?');" name="delete">
          </form>
-         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn">view playlist</a>
+         <a href="view_playlist.php?get_id=<?= $playlist_id; ?>" class="btn"><?= __('view playlist')?></a>
       </div>
       <?php
          } 

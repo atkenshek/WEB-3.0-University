@@ -31,16 +31,16 @@ if(isset($_COOKIE['user_id'])){
    <h1 class="heading"><?= __("expert tutors")?></h1>
 
    <form action="search_tutor.php" method="post" class="search-tutor">
-      <input type="text" name="search_tutor" maxlength="100" placeholder="search tutor..." required>
+      <input type="text" name="search_tutor" maxlength="100" placeholder="<?= __('search tutor...')?>" required>
       <button type="submit" name="search_tutor_btn" class="fas fa-search"></button>
    </form>
 
    <div class="box-container">
 
       <div class="box offer">
-         <h3><?= __("Become a tutor")?></h3>
+         <h3><?= __("become a tutor")?></h3>
          <p><?= __("Join us as a tutor and share your knowledge in the field of blockchain technologies")?></p>
-         <a href="admin/register.php" class="inline-btn">get started</a>
+         <a href="admin/register.php" class="inline-btn"><?= __("get started")?></a>
       </div>
 
       <?php
@@ -81,7 +81,7 @@ if(isset($_COOKIE['user_id'])){
          <p><?= __("total comments")?> : <span><?= $total_comments ?></span></p>
          <form action="tutor_profile.php" method="post">
             <input type="hidden" name="tutor_email" value="<?= $fetch_tutor['email']; ?>">
-            <input type="submit" value="view profile" name="tutor_fetch" class="inline-btn">
+            <input type="submit" value="<?= __("view profile")?>" name="tutor_fetch" class="inline-btn">
          </form>
       </div>
       <?php

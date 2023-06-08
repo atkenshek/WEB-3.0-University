@@ -10,7 +10,25 @@ if(isset($message)){
    }
 }
 ?>
+<style>
+.dropdown{
+   position: relative;
+}
 
+.dropdown-content{
+   position: absolute;
+   margin-top:10px;
+   background-color: white;
+   border: solid thin #aaa;
+   padding: 10px;
+}
+
+.hide{
+   display: none;
+}
+
+
+</style>
 <header class="header">
 
    <section class="flex">
@@ -26,8 +44,14 @@ if(isset($message)){
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="search-btn" class="fas fa-search"></div>
          <div id="user-btn" class="fas fa-user"></div>
-         <div id="dropdown-btn" class="fas fa-language"></div>
+         <div id="dropdown-btn" class="fa fa-language" aria-hidden="true">
+            <div class="dropdown-content hide">
+            <div><a href="dashboard.php?lang=ru">Русский</a></div>
+				<div><a href="dashboard.php?lang=kz">Қазақша</a></div>
+            </div>
+         </div>
          <div id="toggle-btn" class="fas fa-sun"></div>
+                  
       </div>
 
       <div class="profile">
@@ -58,6 +82,24 @@ if(isset($message)){
             }
          ?>
       </div>
+
+      <script>
+	
+         var dropdowns = document.querySelectorAll("#dropdown-btn");
+
+         for (var i = 0; i < dropdowns.length; i++) {
+            
+            dropdowns[i].addEventListener('click',function(e){
+
+               for (var x = 0; x < dropdowns.length; x++) {
+                  dropdowns[x].querySelector(".dropdown-content").classList.add("hide");
+               }
+
+               e.currentTarget.querySelector(".dropdown-content").classList.toggle("hide");
+            });
+         }
+
+      </script>
 
    </section>
 

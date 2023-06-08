@@ -1,5 +1,5 @@
 <?php
-
+require '../lang.php';
 include '../components/connect.php';
 
 if(isset($_COOKIE['tutor_id'])){
@@ -68,7 +68,7 @@ if(isset($_POST['delete_comment'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>view content</title>
+   <title><?= __('view content')?></title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
    <link rel="stylesheet" href="../css/admin_style.css">
@@ -108,8 +108,8 @@ if(isset($_POST['delete_comment'])){
       <form action="" method="post">
          <div class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
-            <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
-            <input type="submit" value="delete" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
+            <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn"><?= __('update')?></a>
+            <input type="submit" value="<?= __('delete')?>" class="delete-btn" onclick="return confirm('delete this video?');" name="delete_video">
          </div>
       </form>
    </div>
@@ -125,7 +125,7 @@ if(isset($_POST['delete_comment'])){
 
 <section class="comments">
 
-   <h1 class="heading">user comments</h1>
+   <h1 class="heading"><?= __('user comments')?></h1>
 
    
    <div class="show-comments">
@@ -149,7 +149,7 @@ if(isset($_POST['delete_comment'])){
          <p class="text"><?= $fetch_comment['comment']; ?></p>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="comment_id" value="<?= $fetch_comment['id']; ?>">
-            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');">delete comment</button>
+            <button type="submit" name="delete_comment" class="inline-delete-btn" onclick="return confirm('delete this comment?');"><?= __('delete comment')?></button>
          </form>
       </div>
       <?php
